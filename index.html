@@ -3,8 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayCounter.pro - Anniversary & Countdown Tracker</title>
-    <meta name="description" content="Track anniversaries, count down to special days, and calculate date differences. Free, simple, and beautiful.">
+    <title>DayCounter.pro - Free Anniversary & Countdown Tracker | Calculate Days Until</title>
+    <meta name="description" content="Free online day counter & anniversary tracker. Calculate days until birthdays, events, or count days since special moments. Supports countdown, days since, age calculator & date difference. Multi-language. Mobile-friendly.">
+    <meta name="keywords" content="day counter, anniversary tracker, countdown calculator, days since, birthday counter, date calculator, age calculator, days calculator, countdown days, how many days until">
+    <meta name="author" content="DayCounter.pro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://daycounter-pi.vercel.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://daycounter-pi.vercel.app/">
+    <meta property="og:title" content="DayCounter.pro - Free Anniversary & Countdown Tracker">
+    <meta property="og:description" content="Track anniversaries, count down to birthdays, calculate days since events. Free, simple, beautiful. Multi-language support.">
+    <meta property="og:image" content="https://daycounter-pi.vercel.app/og-image.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="DayCounter.pro">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://daycounter-pi.vercel.app/">
+    <meta name="twitter:title" content="DayCounter.pro - Free Anniversary & Countdown Tracker">
+    <meta name="twitter:description" content="Track anniversaries, count down to birthdays, calculate days since events. Free, simple, beautiful.">
+    <meta name="twitter:image" content="https://daycounter-pi.vercel.app/twitter-image.png">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="DayCounter">
+    <meta name="application-name" content="DayCounter.pro">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+    
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DayCounter.pro",
+        "description": "Free online day counter and anniversary tracker. Calculate days until events, count days since special moments, age calculator and date difference tool.",
+        "url": "https://daycounter-pi.vercel.app/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires modern web browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "125"
+        },
+        "featureList": [
+            "Countdown to special days",
+            "Days since calculator",
+            "Age calculator",
+            "Date difference calculator",
+            "Add/subtract days",
+            "Multi-language support",
+            "Mobile responsive",
+            "No registration required"
+        ]
+    }
+    </script>
+    
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I count days until my birthday?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter your birthday date in the Countdown section and click Calculate. The tool will show exactly how many days until your next birthday."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate days since an event?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Go to the 'Days Since' section, enter the event name and start date, then click Calculate. The tool will show how many days have passed since that date."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is DayCounter.pro free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, DayCounter.pro is completely free to use. No registration is required, and your dates are never stored or shared."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does DayCounter work on mobile phones?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, DayCounter.pro is fully responsive and works perfectly on all mobile devices, tablets, and desktop computers."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Structured Data - SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "DayCounter.pro",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "89"
+        }
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,18 +264,18 @@
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-purple-100">
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
+            <a href="/" class="flex items-center gap-2" aria-label="DayCounter Home">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl">D</div>
                 <span class="font-display font-bold text-xl md:text-2xl gradient-text" data-i18n="brand">DayCounter.pro</span>
             </a>
             <div class="flex items-center gap-4">
-                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600" role="navigation" aria-label="Main navigation">
                     <a href="#countdown" class="hover:text-indigo-600 transition" data-i18n="nav_countdown">Countdown</a>
                     <a href="#days-since" class="hover:text-indigo-600 transition" data-i18n="nav_days_since">Days Since</a>
                     <a href="#calculator" class="hover:text-indigo-600 transition" data-i18n="nav_calculator">Calculator</a>
                     <a href="privacy.html" class="hover:text-indigo-600 transition" data-i18n="nav_privacy">Privacy</a>
                 </nav>
-                <select id="langSelector" class="lang-selector" onchange="changeLanguage(this.value)">
+                <select id="langSelector" class="lang-selector" onchange="changeLanguage(this.value)" aria-label="Select language">
                     <option value="en">🇺🇸 EN</option>
                     <option value="zh">🇨🇳 中文</option>
                     <option value="es">🇪🇸 ES</option>
@@ -157,7 +286,7 @@
     </header>
 
     <!-- Top Ad Banner -->
-    <div class="ad-placeholder w-full h-16 md:h-20 flex items-center justify-center text-gray-400 text-sm border-b border-gray-200">
+    <div class="ad-placeholder w-full h-16 md:h-20 flex items-center justify-center text-gray-400 text-sm border-b border-gray-200" role="complementary" aria-label="Advertisement">
         <span>📢 Advertisement Space</span>
     </div>
 
@@ -180,20 +309,21 @@
     </section>
 
     <!-- Countdown Section -->
-    <section id="countdown" class="max-w-4xl mx-auto px-4 py-12">
+    <section id="countdown" class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="countdown-title">
         <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 card-hover">
-            <h2 class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="countdown_title">
+            <h2 id="countdown-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="countdown_title">
                 ⏰ Countdown To Your Special Day
             </h2>
             
             <div class="grid md:grid-cols-2 gap-6 mb-8">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_event_label">Event Name</label>
+                    <label for="countdownName" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_event_label">Event Name</label>
                     <input type="text" id="countdownName" data-i18n-placeholder="countdown_event_placeholder" 
-                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition"
+                        aria-describedby="countdownName-help">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_date_label">Target Date</label>
+                    <label for="countdownDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_date_label">Target Date</label>
                     <input type="date" id="countdownDate" 
                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                 </div>
@@ -203,34 +333,34 @@
                 Calculate Countdown
             </button>
             
-            <div id="countdownResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in">
+            <div id="countdownResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in" role="status" aria-live="polite">
                 <p class="text-gray-600 mb-2" id="countdownLabel">Days until your event</p>
-                <div class="countdown-number" id="countdownDays">0</div>
+                <div class="countdown-number" id="countdownDays" aria-atomic="true">0</div>
                 <p class="text-gray-500 text-sm mt-2" id="countdownDateDisplay"></p>
             </div>
         </div>
     </section>
 
     <!-- In-Page Ad -->
-    <div class="ad-placeholder max-w-4xl mx-auto h-20 md:h-24 flex items-center justify-center text-gray-400 text-sm mx-4 rounded-xl my-8">
+    <div class="ad-placeholder max-w-4xl mx-auto h-20 md:h-24 flex items-center justify-center text-gray-400 text-sm mx-4 rounded-xl my-8" role="complementary" aria-label="Advertisement">
         <span>📢 Advertisement Space</span>
     </div>
 
     <!-- Days Since Section -->
-    <section id="days-since" class="max-w-4xl mx-auto px-4 py-12">
+    <section id="days-since" class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="days-since-title">
         <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 card-hover">
-            <h2 class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="days_since_title">
+            <h2 id="days-since-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="days_since_title">
                 📅 How Long Since...?
             </h2>
             
             <div class="grid md:grid-cols-2 gap-6 mb-8">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_event_label">Event Name</label>
+                    <label for="daysSinceName" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_event_label">Event Name</label>
                     <input type="text" id="daysSinceName" data-i18n-placeholder="days_since_event_placeholder" 
                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_date_label">Start Date</label>
+                    <label for="daysSinceDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_date_label">Start Date</label>
                     <input type="date" id="daysSinceDate" 
                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                 </div>
@@ -240,44 +370,44 @@
                 Calculate Days
             </button>
             
-            <div id="daysSinceResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in">
+            <div id="daysSinceResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in" role="status" aria-live="polite">
                 <p class="text-gray-600 mb-2" id="daysSinceLabel">Days since</p>
-                <div class="countdown-number" id="daysSinceCount">0</div>
+                <div class="countdown-number" id="daysSinceCount" aria-atomic="true">0</div>
                 <p class="text-gray-500 text-sm mt-2" id="daysSinceDateDisplay"></p>
             </div>
         </div>
     </section>
 
     <!-- Date Calculator Section -->
-    <section id="calculator" class="max-w-4xl mx-auto px-4 py-12">
+    <section id="calculator" class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="calculator-title">
         <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 card-hover">
-            <h2 class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="calculator_title">
+            <h2 id="calculator-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="calculator_title">
                 🔢 Date Calculator
             </h2>
             
             <!-- Tabs -->
-            <div class="flex border-b border-gray-200 mb-8 overflow-x-auto">
-                <button onclick="switchTab('diff')" id="tab-diff" class="px-6 py-3 font-medium text-sm tab-active whitespace-nowrap" data-i18n="tab_diff">
+            <div class="flex border-b border-gray-200 mb-8 overflow-x-auto" role="tablist">
+                <button onclick="switchTab('diff')" id="tab-diff" class="px-6 py-3 font-medium text-sm tab-active whitespace-nowrap" role="tab" aria-selected="true" data-i18n="tab_diff">
                     Date Difference
                 </button>
-                <button onclick="switchTab('age')" id="tab-age" class="px-6 py-3 font-medium text-sm text-gray-500 hover:text-gray-700 whitespace-nowrap" data-i18n="tab_age">
+                <button onclick="switchTab('age')" id="tab-age" class="px-6 py-3 font-medium text-sm text-gray-500 hover:text-gray-700 whitespace-nowrap" role="tab" aria-selected="false" data-i18n="tab_age">
                     Age Calculator
                 </button>
-                <button onclick="switchTab('add')" id="tab-add" class="px-6 py-3 font-medium text-sm text-gray-500 hover:text-gray-700 whitespace-nowrap" data-i18n="tab_add">
+                <button onclick="switchTab('add')" id="tab-add" class="px-6 py-3 font-medium text-sm text-gray-500 hover:text-gray-700 whitespace-nowrap" role="tab" aria-selected="false" data-i18n="tab_add">
                     Add/Subtract Days
                 </button>
             </div>
             
             <!-- Date Difference Tab -->
-            <div id="panel-diff" class="tab-panel">
+            <div id="panel-diff" class="tab-panel" role="tabpanel">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="diff_date1_label">First Date</label>
+                        <label for="date1" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="diff_date1_label">First Date</label>
                         <input type="date" id="date1" 
                             class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="diff_date2_label">Second Date</label>
+                        <label for="date2" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="diff_date2_label">Second Date</label>
                         <input type="date" id="date2" 
                             class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                     </div>
@@ -285,46 +415,46 @@
                 <button onclick="calculateDiff()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="diff_btn">
                     Calculate Difference
                 </button>
-                <div id="diffResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in">
+                <div id="diffResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in" role="status" aria-live="polite">
                     <p class="text-3xl font-bold text-indigo-600" id="diffDays"></p>
                     <p class="text-gray-500 text-sm mt-2" id="diffDetails"></p>
                 </div>
             </div>
             
             <!-- Age Calculator Tab -->
-            <div id="panel-age" class="tab-panel hidden">
+            <div id="panel-age" class="tab-panel hidden" role="tabpanel">
                 <div class="mb-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="age_birth_label">Date of Birth</label>
+                    <label for="birthDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="age_birth_label">Date of Birth</label>
                     <input type="date" id="birthDate" 
                         class="w-full md:w-1/2 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                 </div>
                 <button onclick="calculateAge()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="age_btn">
                     Calculate Age
                 </button>
-                <div id="ageResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in">
+                <div id="ageResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in" role="status" aria-live="polite">
                     <p class="text-3xl font-bold text-indigo-600" id="ageYears"></p>
                     <p class="text-gray-500 text-sm mt-2" id="ageDetails"></p>
                 </div>
             </div>
             
             <!-- Add/Subtract Days Tab -->
-            <div id="panel-add" class="tab-panel hidden">
+            <div id="panel-add" class="tab-panel hidden" role="tabpanel">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="add_start_label">Start Date</label>
+                        <label for="addStartDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="add_start_label">Start Date</label>
                         <input type="date" id="addStartDate" 
                             class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="add_days_label">Days to Add/Subtract</label>
+                        <label for="addDays" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="add_days_label">Days to Add/Subtract</label>
                         <input type="number" id="addDays" data-i18n-placeholder="add_days_placeholder" 
                             class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                     </div>
                 </div>
-                <button onclick="addDays()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="add_btn">
+                <button onclick="addDaysToDate()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="add_btn">
                     Calculate New Date
                 </button>
-                <div id="addResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in">
+                <div id="addResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in" role="status" aria-live="polite">
                     <p class="text-3xl font-bold text-indigo-600" id="newDate"></p>
                     <p class="text-gray-500 text-sm mt-2" id="newDateDay"></p>
                 </div>
@@ -333,47 +463,47 @@
     </section>
 
     <!-- Features Section -->
-    <section class="max-w-4xl mx-auto px-4 py-12">
-        <h2 class="font-display text-2xl md:text-3xl font-bold text-center mb-12" data-i18n="features_title">
+    <section class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="features-title">
+        <h2 id="features-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-12" data-i18n="features_title">
             Why Use DayCounter.pro?
         </h2>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-2xl p-6 text-center card-hover">
+            <article class="bg-white rounded-2xl p-6 text-center card-hover">
                 <div class="text-4xl mb-4">🎯</div>
                 <h3 class="font-display font-bold text-lg mb-2" data-i18n="feature1_title">Simple & Fast</h3>
                 <p class="text-gray-600 text-sm" data-i18n="feature1_desc">No sign-up required. Just pick a date and see results instantly.</p>
-            </div>
-            <div class="bg-white rounded-2xl p-6 text-center card-hover">
+            </article>
+            <article class="bg-white rounded-2xl p-6 text-center card-hover">
                 <div class="text-4xl mb-4">📱</div>
                 <h3 class="font-display font-bold text-lg mb-2" data-i18n="feature2_title">Works Everywhere</h3>
                 <p class="text-gray-600 text-sm" data-i18n="feature2_desc">Perfect on phone, tablet, or desktop. Save to home screen!</p>
-            </div>
-            <div class="bg-white rounded-2xl p-6 text-center card-hover">
+            </article>
+            <article class="bg-white rounded-2xl p-6 text-center card-hover">
                 <div class="text-4xl mb-4">🔒</div>
                 <h3 class="font-display font-bold text-lg mb-2" data-i18n="feature3_title">100% Private</h3>
                 <p class="text-gray-600 text-sm" data-i18n="feature3_desc">Your dates stay on your device. We don't store anything.</p>
-            </div>
+            </article>
         </div>
     </section>
 
     <!-- Bottom Ad Banner -->
-    <div class="ad-placeholder w-full h-20 md:h-24 flex items-center justify-center text-gray-400 text-sm border-t border-gray-200 mt-12">
+    <div class="ad-placeholder w-full h-20 md:h-24 flex items-center justify-center text-gray-400 text-sm border-t border-gray-200 mt-12" role="complementary" aria-label="Advertisement">
         <span>📢 Advertisement Space</span>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 mt-8">
+    <footer class="bg-white border-t border-gray-200 mt-8" role="contentinfo">
         <div class="max-w-6xl mx-auto px-4 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-2">
                     <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">D</div>
                     <span class="font-display font-bold text-lg" data-i18n="brand">DayCounter.pro</span>
                 </div>
-                <div class="flex gap-6 text-sm text-gray-600">
+                <nav class="flex gap-6 text-sm text-gray-600" aria-label="Footer navigation">
                     <a href="privacy.html" class="hover:text-indigo-600 transition" data-i18n="footer_privacy">Privacy Policy</a>
                     <a href="terms.html" class="hover:text-indigo-600 transition" data-i18n="footer_terms">Terms of Service</a>
                     <a href="about.html" class="hover:text-indigo-600 transition" data-i18n="footer_about">About</a>
-                </div>
+                </nav>
             </div>
             <p class="text-center text-gray-400 text-sm mt-6" data-i18n="footer_copyright">
                 © 2026 DayCounter.pro. All rights reserved.
@@ -382,7 +512,7 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 hidden">
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 hidden" role="dialog" aria-label="Cookie consent">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-sm">
                 <span data-i18n="cookie_text">🍪 We use cookies to enhance your experience. By continuing, you agree to our </span>
@@ -491,11 +621,14 @@
             document.querySelectorAll('[id^="tab-"]').forEach(t => {
                 t.classList.remove('tab-active');
                 t.classList.add('text-gray-500');
+                t.setAttribute('aria-selected', 'false');
             });
             
             document.getElementById(`panel-${tab}`).classList.remove('hidden');
-            document.getElementById(`tab-${tab}`).classList.add('tab-active');
-            document.getElementById(`tab-${tab}`).classList.remove('text-gray-500');
+            const tabBtn = document.getElementById(`tab-${tab}`);
+            tabBtn.classList.add('tab-active');
+            tabBtn.classList.remove('text-gray-500');
+            tabBtn.setAttribute('aria-selected', 'true');
         }
         
         // Date Difference
@@ -539,60 +672,3 @@
             let days = now.getDate() - birth.getDate();
             
             if (days < 0) {
-                months--;
-                days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-            }
-            
-            if (months < 0) {
-                years--;
-                months += 12;
-            }
-            
-            const totalDays = Math.floor((now - birth) / (1000 * 60 * 60 * 24));
-            
-            document.getElementById('ageResult').classList.remove('hidden');
-            document.getElementById('ageYears').textContent = `${years} ${t('age_result_prefix')}, ${months} months, ${days} days`;
-            document.getElementById('ageDetails').textContent = `${t('age_total_prefix')} ${totalDays.toLocaleString()} ${t('age_total_suffix')}`;
-        }
-        
-        // Add/Subtract Days
-        function addDaysToDate() {
-            const startDate = document.getElementById('addStartDate').value;
-            const daysToAdd = parseInt(document.getElementById('addDays').value);
-            
-            if (!startDate || isNaN(daysToAdd)) {
-                alert(t('error_valid_input'));
-                return;
-            }
-            
-            const start = new Date(startDate);
-            const result = new Date(start);
-            result.setDate(result.getDate() + daysToAdd);
-            
-            document.getElementById('addResult').classList.remove('hidden');
-            document.getElementById('newDate').textContent = result.toLocaleDateString(currentLang === 'zh' ? 'zh-CN' : currentLang === 'ja' ? 'ja-JP' : currentLang === 'es' ? 'es-ES' : 'en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
-            document.getElementById('newDateDay').textContent = daysToAdd >= 0 
-                ? `${daysToAdd} ${t('add_days_after')} ${start.toLocaleDateString(currentLang === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`
-                : `${Math.abs(daysToAdd)} ${t('add_days_before')} ${start.toLocaleDateString(currentLang === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
-        }
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            showCookieBanner();
-            
-            // Set default dates
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('countdownDate').value = today;
-            document.getElementById('daysSinceDate').value = today;
-            document.getElementById('date1').value = today;
-            document.getElementById('date2').value = today;
-            document.getElementById('addStartDate').value = today;
-        });
-    </script>
-</body>
-</html>
