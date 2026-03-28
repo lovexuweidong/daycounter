@@ -4,278 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayCounter.pro - Free Anniversary & Countdown Tracker | Calculate Days Until</title>
-    <meta name="description" content="Free online day counter & anniversary tracker. Calculate days until birthdays, events, or count days since special moments. Supports countdown, days since, age calculator & date difference. Multi-language. Mobile-friendly.">
-    <meta name="keywords" content="day counter, anniversary tracker, countdown calculator, days since, birthday counter, date calculator, age calculator, days calculator, countdown days, how many days until">
+    <meta name="description" content="Free online day counter & anniversary tracker. Calculate days until birthdays, events, or count days since special moments. Supports countdown, days since, age calculator, ICS calendar export. Multi-language. Mobile-friendly.">
+    <meta name="keywords" content="day counter, anniversary tracker, countdown calculator, days since, birthday counter, date calculator, age calculator, days calculator, countdown days, how many days until, ICS calendar export">
     <meta name="author" content="DayCounter.pro">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://daycounter-pi.vercel.app/">
-    
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://daycounter-pi.vercel.app/">
     <meta property="og:title" content="DayCounter.pro - Free Anniversary & Countdown Tracker">
-    <meta property="og:description" content="Track anniversaries, count down to birthdays, calculate days since events. Free, simple, beautiful. Multi-language support.">
-    <meta property="og:image" content="https://daycounter-pi.vercel.app/og-image.png">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="DayCounter.pro">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://daycounter-pi.vercel.app/">
-    <meta name="twitter:title" content="DayCounter.pro - Free Anniversary & Countdown Tracker">
-    <meta name="twitter:description" content="Track anniversaries, count down to birthdays, calculate days since events. Free, simple, beautiful.">
-    <meta name="twitter:image" content="https://daycounter-pi.vercel.app/twitter-image.png">
-    
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#6366f1">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="DayCounter">
-    <meta name="application-name" content="DayCounter.pro">
-    
-    <!-- Favicon -->
+    <meta property="og:description" content="Track anniversaries, count down to birthdays, calculate days since events. Free with ICS calendar export.">
     <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
-    
-    <!-- Structured Data - WebApplication -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "DayCounter.pro",
-        "description": "Free online day counter and anniversary tracker. Calculate days until events, count days since special moments, age calculator and date difference tool.",
-        "url": "https://daycounter-pi.vercel.app/",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "browserRequirements": "Requires modern web browser",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "125"
-        },
-        "featureList": [
-            "Countdown to special days",
-            "Days since calculator",
-            "Age calculator",
-            "Date difference calculator",
-            "Add/subtract days",
-            "Multi-language support",
-            "Mobile responsive",
-            "No registration required"
-        ]
-    }
-    </script>
-    
-    <!-- Structured Data - FAQPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How do I count days until my birthday?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Enter your birthday date in the Countdown section and click Calculate. The tool will show exactly how many days until your next birthday."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I calculate days since an event?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Go to the 'Days Since' section, enter the event name and start date, then click Calculate. The tool will show how many days have passed since that date."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is DayCounter.pro free to use?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, DayCounter.pro is completely free to use. No registration is required, and your dates are never stored or shared."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does DayCounter work on mobile phones?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, DayCounter.pro is fully responsive and works perfectly on all mobile devices, tablets, and desktop computers."
-                }
-            }
-        ]
-    }
-    </script>
-    
-    <!-- Structured Data - SoftwareApplication -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "DayCounter.pro",
-        "applicationCategory": "ProductivityApplication",
-        "operatingSystem": "Web Browser",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "89"
-        }
-    }
-    </script>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #6366f1;
-            --primary-light: #818cf8;
-            --secondary: #ec4899;
-            --accent: #f59e0b;
-            --dark: #1e1b4b;
-            --light: #faf5ff;
-        }
-        
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 50%, #e0e7ff 100%);
-            min-height: 100vh;
-        }
-        
-        h1, h2, h3, .font-display {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.5);
-        }
-        
-        .countdown-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 4rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        @media (min-width: 768px) {
-            .countdown-number {
-                font-size: 6rem;
-            }
-        }
-        
-        .ad-placeholder {
-            background: repeating-linear-gradient(
-                45deg,
-                #f3f4f6,
-                #f3f4f6 10px,
-                #e5e7eb 10px,
-                #e5e7eb 20px
-            );
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .tab-active {
-            border-bottom: 3px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        input[type="date"], input[type="text"], input[type="number"] {
-            font-family: 'DM Sans', sans-serif;
-        }
-        
-        .result-card {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-            border: 2px solid rgba(99, 102, 241, 0.2);
-        }
-        
-        .lang-selector {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 6px 12px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .lang-selector:hover {
-            border-color: var(--primary);
-        }
-        
-        .lang-selector:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-        }
+        :root { --primary: #6366f1; --primary-light: #818cf8; --secondary: #ec4899; }
+        body { font-family: 'DM Sans', sans-serif; background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 50%, #e0e7ff 100%); min-height: 100vh; }
+        h1, h2, h3, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); transition: all 0.3s ease; }
+        .btn-primary:hover { transform: scale(1.02); box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.5); }
+        .countdown-number { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 4rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        @media (min-width: 768px) { .countdown-number { font-size: 6rem; } }
+        .ad-placeholder { background: repeating-linear-gradient(45deg, #f3f4f6, #f3f4f6 10px, #e5e7eb 10px, #e5e7eb 20px); }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .tab-active { border-bottom: 3px solid var(--primary); color: var(--primary); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); }
+        .event-type-btn { transition: all 0.2s ease; border: 2px solid transparent; }
+        .event-type-btn:hover, .event-type-btn.selected { border-color: var(--primary); background: rgba(99, 102, 241, 0.1); }
+        .saved-event { transition: all 0.2s ease; }
+        .saved-event:hover { transform: translateX(4px); }
+        .lang-selector { background: white; border: 2px solid #e5e7eb; border-radius: 8px; padding: 6px 12px; font-size: 14px; cursor: pointer; }
+        .result-card { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1)); border: 2px solid rgba(99, 102, 241, 0.2); }
     </style>
 </head>
 <body>
+    <!-- Onboarding Modal -->
+    <div id="onboardingModal" class="fixed inset-0 z-[100] hidden">
+        <div class="modal-overlay absolute inset-0" onclick="closeOnboarding()"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 animate-fade-in">
+                <div class="flex justify-center gap-2 mb-6">
+                    <div id="dot1" class="w-3 h-3 rounded-full bg-indigo-600"></div>
+                    <div id="dot2" class="w-3 h-3 rounded-full bg-gray-300"></div>
+                    <div id="dot3" class="w-3 h-3 rounded-full bg-gray-300"></div>
+                </div>
+                <div id="slide1" class="text-center">
+                    <div class="text-6xl mb-4">⏰</div>
+                    <h2 class="font-display text-2xl font-bold mb-3 gradient-text">Welcome to DayCounter!</h2>
+                    <p class="text-gray-600 mb-6">Track your special days, count down to important events, and never miss an anniversary again.</p>
+                    <button onclick="nextSlide(2)" class="btn-primary text-white px-8 py-3 rounded-full font-medium w-full">Get Started →</button>
+                </div>
+                <div id="slide2" class="text-center hidden">
+                    <div class="text-6xl mb-4">📅</div>
+                    <h2 class="font-display text-2xl font-bold mb-3">Countdown & Days Since</h2>
+                    <p class="text-gray-600 mb-6">Count down to birthdays, weddings, vacations. Or count up from memorable moments like starting a new job.</p>
+                    <button onclick="nextSlide(3)" class="btn-primary text-white px-8 py-3 rounded-full font-medium w-full">Next →</button>
+                </div>
+                <div id="slide3" class="text-center hidden">
+                    <div class="text-6xl mb-4">📱</div>
+                    <h2 class="font-display text-2xl font-bold mb-3">Export to Calendar</h2>
+                    <p class="text-gray-600 mb-6">Save events to your phone or computer calendar with reminders. Never forget a special day!</p>
+                    <button onclick="closeOnboarding()" class="btn-primary text-white px-8 py-3 rounded-full font-medium w-full">Let's Go! 🚀</button>
+                </div>
+                <button onclick="closeOnboarding()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-sm">Skip</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-purple-100">
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2" aria-label="DayCounter Home">
+            <a href="/" class="flex items-center gap-2">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl">D</div>
-                <span class="font-display font-bold text-xl md:text-2xl gradient-text" data-i18n="brand">DayCounter.pro</span>
+                <span class="font-display font-bold text-xl md:text-2xl gradient-text">DayCounter.pro</span>
             </a>
             <div class="flex items-center gap-4">
-                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600" role="navigation" aria-label="Main navigation">
-                    <a href="#countdown" class="hover:text-indigo-600 transition" data-i18n="nav_countdown">Countdown</a>
-                    <a href="#days-since" class="hover:text-indigo-600 transition" data-i18n="nav_days_since">Days Since</a>
-                    <a href="#calculator" class="hover:text-indigo-600 transition" data-i18n="nav_calculator">Calculator</a>
-                    <a href="privacy.html" class="hover:text-indigo-600 transition" data-i18n="nav_privacy">Privacy</a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                    <a href="#countdown" class="hover:text-indigo-600 transition">Countdown</a>
+                    <a href="#saved" class="hover:text-indigo-600 transition">My Events</a>
+                    <a href="#calculator" class="hover:text-indigo-600 transition">Calculator</a>
                 </nav>
-                <select id="langSelector" class="lang-selector" onchange="changeLanguage(this.value)" aria-label="Select language">
+                <select id="langSelector" class="lang-selector" onchange="changeLanguage(this.value)">
                     <option value="en">🇺🇸 EN</option>
                     <option value="zh">🇨🇳 中文</option>
                     <option value="es">🇪🇸 ES</option>
@@ -286,389 +100,357 @@
     </header>
 
     <!-- Top Ad Banner -->
-    <div class="ad-placeholder w-full h-16 md:h-20 flex items-center justify-center text-gray-400 text-sm border-b border-gray-200" role="complementary" aria-label="Advertisement">
+    <div class="ad-placeholder w-full h-16 md:h-20 flex items-center justify-center text-gray-400 text-sm border-b border-gray-200">
         <span>📢 Advertisement Space</span>
     </div>
 
     <!-- Hero Section -->
     <section class="max-w-6xl mx-auto px-4 py-12 md:py-20 text-center animate-fade-in">
         <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">
-            <span data-i18n="hero_title_1">Track Your </span><span class="gradient-text" data-i18n="hero_title_2">Special Days</span>
+            Track Your <span class="gradient-text">Special Days</span>
         </h1>
-        <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-8" data-i18n="hero_desc">
+        <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-8">
             Count down to birthdays, anniversaries, and special moments. Or count up from memorable dates. Simple, beautiful, free.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-            <a href="#countdown" class="btn-primary text-white px-8 py-3 rounded-full font-medium" data-i18n="hero_btn_countdown">
-                Start Countdown
-            </a>
-            <a href="#days-since" class="bg-white text-indigo-600 border-2 border-indigo-200 px-8 py-3 rounded-full font-medium hover:border-indigo-400 transition" data-i18n="hero_btn_days_since">
-                Days Since
-            </a>
+            <a href="#countdown" class="btn-primary text-white px-8 py-3 rounded-full font-medium">Start Countdown</a>
+            <a href="#saved" class="bg-white text-indigo-600 border-2 border-indigo-200 px-8 py-3 rounded-full font-medium hover:border-indigo-400 transition">My Saved Events</a>
         </div>
     </section>
 
     <!-- Countdown Section -->
-    <section id="countdown" class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="countdown-title">
+    <section id="countdown" class="max-w-4xl mx-auto px-4 py-12">
         <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 card-hover">
-            <h2 id="countdown-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="countdown_title">
-                ⏰ Countdown To Your Special Day
-            </h2>
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="font-display text-2xl md:text-3xl font-bold">⏰ Countdown To Special Day</h2>
+                <button onclick="showOnboarding()" class="text-gray-400 hover:text-indigo-600 text-sm">❓ Help</button>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                <div>
-                    <label for="countdownName" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_event_label">Event Name</label>
-                    <input type="text" id="countdownName" data-i18n-placeholder="countdown_event_placeholder" 
-                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition"
-                        aria-describedby="countdownName-help">
+            <!-- Event Type Selection -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3">Event Type</label>
+                <div class="flex flex-wrap gap-2" id="eventTypeGrid">
+                    <button onclick="selectEventType('birthday')" class="event-type-btn selected px-4 py-2 rounded-full text-sm flex items-center gap-1" data-type="birthday">🎂 Birthday</button>
+                    <button onclick="selectEventType('anniversary')" class="event-type-btn px-4 py-2 rounded-full text-sm" data-type="anniversary">💍 Anniversary</button>
+                    <button onclick="selectEventType('wedding')" class="event-type-btn px-4 py-2 rounded-full text-sm" data-type="wedding">👰 Wedding</button>
+                    <button onclick="selectEventType('vacation')" class="event-type-btn px-4 py-2 rounded-full text-sm" data-type="vacation">✈️ Vacation</button>
+                    <button onclick="selectEventType('holiday')" class="event-type-btn px-4 py-2 rounded-full text-sm" data-type="holiday">🎄 Holiday</button>
+                    <button onclick="selectEventType('exam')" class="event-type-btn px-4 py-2 rounded-full text-sm" data-type="exam">📚 Exam</button>
+                    <button onclick="selectEventType('custom')" class="event-type-btn px-4 py-2 rounded-full text-sm" data-type="custom">⭐ Custom</button>
                 </div>
-                <div>
-                    <label for="countdownDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_date_label">Target Date</label>
-                    <input type="date" id="countdownDate" 
-                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
+                <div id="customTypeInput" class="mt-3 hidden">
+                    <input type="text" id="customTypeName" placeholder="Enter custom event name..." class="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none">
                 </div>
             </div>
             
-            <button onclick="startCountdown()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="countdown_btn">
-                Calculate Countdown
-            </button>
+            <!-- Input Fields -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Event Name</label>
+                    <input type="text" id="eventName" placeholder="e.g. My Birthday, Christmas..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Target Date</label>
+                    <input type="date" id="targetDate" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
+                </div>
+            </div>
             
-            <div id="countdownResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in" role="status" aria-live="polite">
-                <p class="text-gray-600 mb-2" id="countdownLabel">Days until your event</p>
-                <div class="countdown-number" id="countdownDays" aria-atomic="true">0</div>
+            <!-- Reminder Settings -->
+            <div class="bg-indigo-50 rounded-xl p-4 mb-6">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="enableReminder" class="w-5 h-5 rounded accent-indigo-600" checked>
+                    <span class="text-sm font-medium text-gray-700">🔔 Enable Calendar Reminder</span>
+                </label>
+                <div id="reminderOptions" class="mt-3 grid md:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Remind me before</label>
+                        <select id="reminderDays" class="w-full px-3 py-2 border rounded-lg text-sm">
+                            <option value="0">On the day</option>
+                            <option value="1">1 day before</option>
+                            <option value="3">3 days before</option>
+                            <option value="7" selected>1 week before</option>
+                            <option value="14">2 weeks before</option>
+                            <option value="30">1 month before</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Reminder time</label>
+                        <select id="reminderTime" class="w-full px-3 py-2 border rounded-lg text-sm">
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="18:00">06:00 PM</option>
+                            <option value="20:00">08:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap gap-3">
+                <button onclick="calculateCountdown()" class="btn-primary text-white px-8 py-3 rounded-full font-medium">Calculate & Save</button>
+                <button onclick="calculateOnly()" class="bg-white text-indigo-600 border-2 border-indigo-200 px-6 py-3 rounded-full font-medium hover:border-indigo-400 transition">Calculate Only</button>
+            </div>
+            
+            <!-- Result -->
+            <div id="countdownResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in">
+                <p class="text-gray-600 mb-2" id="countdownLabel">Days until</p>
+                <div class="countdown-number" id="countdownDays">0</div>
                 <p class="text-gray-500 text-sm mt-2" id="countdownDateDisplay"></p>
+                <div class="flex flex-wrap gap-3 justify-center mt-6">
+                    <button onclick="exportToICS('countdown')" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">📱 Export to Calendar</button>
+                    <button onclick="copyShareLink()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition">🔗 Copy Share Link</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- In-Page Ad -->
-    <div class="ad-placeholder max-w-4xl mx-auto h-20 md:h-24 flex items-center justify-center text-gray-400 text-sm mx-4 rounded-xl my-8" role="complementary" aria-label="Advertisement">
+    <div class="ad-placeholder max-w-4xl mx-auto h-20 md:h-24 flex items-center justify-center text-gray-400 text-sm mx-4 rounded-xl my-8">
         <span>📢 Advertisement Space</span>
     </div>
 
     <!-- Days Since Section -->
-    <section id="days-since" class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="days-since-title">
+    <section id="days-since" class="max-w-4xl mx-auto px-4 py-12">
         <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 card-hover">
-            <h2 id="days-since-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="days_since_title">
-                📅 How Long Since...?
-            </h2>
+            <h2 class="font-display text-2xl md:text-3xl font-bold mb-8">📅 How Long Since...?</h2>
             
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                    <label for="daysSinceName" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_event_label">Event Name</label>
-                    <input type="text" id="daysSinceName" data-i18n-placeholder="days_since_event_placeholder" 
-                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Event Name</label>
+                    <input type="text" id="daysSinceName" placeholder="e.g. Started Dating, Quit Smoking..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                 </div>
                 <div>
-                    <label for="daysSinceDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_date_label">Start Date</label>
-                    <input type="date" id="daysSinceDate" 
-                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
+                    <input type="date" id="daysSinceDate" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
                 </div>
             </div>
             
-            <button onclick="calculateDaysSince()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="days_since_btn">
-                Calculate Days
-            </button>
+            <div class="flex flex-wrap gap-3">
+                <button onclick="calculateDaysSince()" class="btn-primary text-white px-8 py-3 rounded-full font-medium">Calculate & Save</button>
+                <button onclick="calculateDaysSinceOnly()" class="bg-white text-indigo-600 border-2 border-indigo-200 px-6 py-3 rounded-full font-medium hover:border-indigo-400 transition">Calculate Only</button>
+            </div>
             
-            <div id="daysSinceResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in" role="status" aria-live="polite">
+            <div id="daysSinceResult" class="hidden mt-8 result-card rounded-2xl p-8 text-center animate-fade-in">
                 <p class="text-gray-600 mb-2" id="daysSinceLabel">Days since</p>
-                <div class="countdown-number" id="daysSinceCount" aria-atomic="true">0</div>
+                <div class="countdown-number" id="daysSinceCount">0</div>
                 <p class="text-gray-500 text-sm mt-2" id="daysSinceDateDisplay"></p>
+                <div class="flex flex-wrap gap-3 justify-center mt-6">
+                    <button onclick="exportToICS('daysSince')" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">📱 Export to Calendar</button>
+                    <button onclick="shareDaysSince()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition">🔗 Share</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Date Calculator Section -->
-    <section id="calculator" class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="calculator-title">
+    <!-- Saved Events Section -->
+    <section id="saved" class="max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="font-display text-2xl font-bold">💾 My Saved Events</h2>
+                <button onclick="exportAllToICS()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">📅 Export All to Calendar</button>
+            </div>
+            <div id="savedEventsList"></div>
+            <div id="noEventsMessage" class="text-center py-12 text-gray-500">
+                <div class="text-5xl mb-4">📝</div>
+                <p>No saved events yet.</p>
+                <p class="text-sm mt-2">Create a countdown or days since event above!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="max-w-4xl mx-auto px-4 py-12">
         <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 card-hover">
-            <h2 id="calculator-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-8" data-i18n="calculator_title">
-                🔢 Date Calculator
-            </h2>
+            <h2 class="font-display text-2xl md:text-3xl font-bold mb-8">🔢 Date Calculator</h2>
             
-            <!-- Tabs -->
-            <div class="flex border-b border-gray-200 mb-8 overflow-x-auto" role="tablist">
-                <button onclick="switchTab('diff')" id="tab-diff" class="px-6 py-3 font-medium text-sm tab-active whitespace-nowrap" role="tab" aria-selected="true" data-i18n="tab_diff">
-                    Date Difference
-                </button>
-                <button onclick="switchTab('age')" id="tab-age" class="px-6 py-3 font-medium text-sm text-gray-500 hover:text-gray-700 whitespace-nowrap" role="tab" aria-selected="false" data-i18n="tab_age">
-                    Age Calculator
-                </button>
-                <button onclick="switchTab('add')" id="tab-add" class="px-6 py-3 font-medium text-sm text-gray-500 hover:text-gray-700 whitespace-nowrap" role="tab" aria-selected="false" data-i18n="tab_add">
-                    Add/Subtract Days
-                </button>
+            <div class="flex border-b border-gray-200 mb-8 overflow-x-auto">
+                <button onclick="switchTab('diff')" id="tab-diff" class="px-6 py-3 font-medium text-sm tab-active whitespace-nowrap">Date Difference</button>
+                <button onclick="switchTab('age')" id="tab-age" class="px-6 py-3 font-medium text-sm text-gray-500 whitespace-nowrap">Age Calculator</button>
+                <button onclick="switchTab('add')" id="tab-add" class="px-6 py-3 font-medium text-sm text-gray-500 whitespace-nowrap">Add/Subtract Days</button>
             </div>
             
-            <!-- Date Difference Tab -->
-            <div id="panel-diff" class="tab-panel" role="tabpanel">
+            <div id="panel-diff" class="tab-panel">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label for="date1" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="diff_date1_label">First Date</label>
-                        <input type="date" id="date1" 
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
-                    </div>
-                    <div>
-                        <label for="date2" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="diff_date2_label">Second Date</label>
-                        <input type="date" id="date2" 
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
-                    </div>
+                    <div><label class="block text-sm font-medium text-gray-700 mb-2">First Date</label><input type="date" id="date1" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none"></div>
+                    <div><label class="block text-sm font-medium text-gray-700 mb-2">Second Date</label><input type="date" id="date2" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none"></div>
                 </div>
-                <button onclick="calculateDiff()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="diff_btn">
-                    Calculate Difference
-                </button>
-                <div id="diffResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in" role="status" aria-live="polite">
-                    <p class="text-3xl font-bold text-indigo-600" id="diffDays"></p>
-                    <p class="text-gray-500 text-sm mt-2" id="diffDetails"></p>
-                </div>
+                <button onclick="calculateDiff()" class="btn-primary text-white px-8 py-3 rounded-full font-medium">Calculate Difference</button>
+                <div id="diffResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center"><p class="text-3xl font-bold text-indigo-600" id="diffDays"></p><p class="text-gray-500 text-sm mt-2" id="diffDetails"></p></div>
             </div>
             
-            <!-- Age Calculator Tab -->
-            <div id="panel-age" class="tab-panel hidden" role="tabpanel">
-                <div class="mb-6">
-                    <label for="birthDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="age_birth_label">Date of Birth</label>
-                    <input type="date" id="birthDate" 
-                        class="w-full md:w-1/2 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
-                </div>
-                <button onclick="calculateAge()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="age_btn">
-                    Calculate Age
-                </button>
-                <div id="ageResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in" role="status" aria-live="polite">
-                    <p class="text-3xl font-bold text-indigo-600" id="ageYears"></p>
-                    <p class="text-gray-500 text-sm mt-2" id="ageDetails"></p>
-                </div>
+            <div id="panel-age" class="tab-panel hidden">
+                <div class="mb-6"><label class="block text-sm font-medium text-gray-700 mb-2">Date of Birth</label><input type="date" id="birthDate" class="w-full md:w-1/2 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none"></div>
+                <button onclick="calculateAge()" class="btn-primary text-white px-8 py-3 rounded-full font-medium">Calculate Age</button>
+                <div id="ageResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center"><p class="text-3xl font-bold text-indigo-600" id="ageYears"></p><p class="text-gray-500 text-sm mt-2" id="ageDetails"></p></div>
             </div>
             
-            <!-- Add/Subtract Days Tab -->
-            <div id="panel-add" class="tab-panel hidden" role="tabpanel">
+            <div id="panel-add" class="tab-panel hidden">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label for="addStartDate" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="add_start_label">Start Date</label>
-                        <input type="date" id="addStartDate" 
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
-                    </div>
-                    <div>
-                        <label for="addDays" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="add_days_label">Days to Add/Subtract</label>
-                        <input type="number" id="addDays" data-i18n-placeholder="add_days_placeholder" 
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition">
-                    </div>
+                    <div><label class="block text-sm font-medium text-gray-700 mb-2">Start Date</label><input type="date" id="addStartDate" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none"></div>
+                    <div><label class="block text-sm font-medium text-gray-700 mb-2">Days to Add/Subtract</label><input type="number" id="addDays" placeholder="e.g. 100 or -50" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none"></div>
                 </div>
-                <button onclick="addDaysToDate()" class="btn-primary w-full md:w-auto text-white px-8 py-3 rounded-full font-medium" data-i18n="add_btn">
-                    Calculate New Date
-                </button>
-                <div id="addResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center animate-fade-in" role="status" aria-live="polite">
-                    <p class="text-3xl font-bold text-indigo-600" id="newDate"></p>
-                    <p class="text-gray-500 text-sm mt-2" id="newDateDay"></p>
-                </div>
+                <button onclick="addDaysToDate()" class="btn-primary text-white px-8 py-3 rounded-full font-medium">Calculate New Date</button>
+                <div id="addResult" class="hidden mt-6 bg-indigo-50 rounded-xl p-6 text-center"><p class="text-3xl font-bold text-indigo-600" id="newDate"></p><p class="text-gray-500 text-sm mt-2" id="newDateDay"></p></div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="features-title">
-        <h2 id="features-title" class="font-display text-2xl md:text-3xl font-bold text-center mb-12" data-i18n="features_title">
-            Why Use DayCounter.pro?
-        </h2>
+    <!-- Features -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-center mb-12">Why Use DayCounter.pro?</h2>
         <div class="grid md:grid-cols-3 gap-6">
-            <article class="bg-white rounded-2xl p-6 text-center card-hover">
-                <div class="text-4xl mb-4">🎯</div>
-                <h3 class="font-display font-bold text-lg mb-2" data-i18n="feature1_title">Simple & Fast</h3>
-                <p class="text-gray-600 text-sm" data-i18n="feature1_desc">No sign-up required. Just pick a date and see results instantly.</p>
-            </article>
-            <article class="bg-white rounded-2xl p-6 text-center card-hover">
-                <div class="text-4xl mb-4">📱</div>
-                <h3 class="font-display font-bold text-lg mb-2" data-i18n="feature2_title">Works Everywhere</h3>
-                <p class="text-gray-600 text-sm" data-i18n="feature2_desc">Perfect on phone, tablet, or desktop. Save to home screen!</p>
-            </article>
-            <article class="bg-white rounded-2xl p-6 text-center card-hover">
-                <div class="text-4xl mb-4">🔒</div>
-                <h3 class="font-display font-bold text-lg mb-2" data-i18n="feature3_title">100% Private</h3>
-                <p class="text-gray-600 text-sm" data-i18n="feature3_desc">Your dates stay on your device. We don't store anything.</p>
-            </article>
+            <div class="bg-white rounded-2xl p-6 text-center card-hover"><div class="text-4xl mb-4">🎯</div><h3 class="font-display font-bold text-lg mb-2">Simple & Fast</h3><p class="text-gray-600 text-sm">No sign-up required. Just pick a date and see results instantly.</p></div>
+            <div class="bg-white rounded-2xl p-6 text-center card-hover"><div class="text-4xl mb-4">📅</div><h3 class="font-display font-bold text-lg mb-2">Calendar Export</h3><p class="text-gray-600 text-sm">Export events to Google Calendar, Apple Calendar, or Outlook with reminders.</p></div>
+            <div class="bg-white rounded-2xl p-6 text-center card-hover"><div class="text-4xl mb-4">🔒</div><h3 class="font-display font-bold text-lg mb-2">100% Private</h3><p class="text-gray-600 text-sm">Your dates stay on your device. We don't store anything.</p></div>
         </div>
     </section>
-
-    <!-- Bottom Ad Banner -->
-    <div class="ad-placeholder w-full h-20 md:h-24 flex items-center justify-center text-gray-400 text-sm border-t border-gray-200 mt-12" role="complementary" aria-label="Advertisement">
-        <span>📢 Advertisement Space</span>
-    </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 mt-8" role="contentinfo">
+    <footer class="bg-white border-t border-gray-200 mt-8">
         <div class="max-w-6xl mx-auto px-4 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">D</div>
-                    <span class="font-display font-bold text-lg" data-i18n="brand">DayCounter.pro</span>
+                <div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">D</div><span class="font-display font-bold text-lg">DayCounter.pro</span></div>
+                <div class="flex gap-6 text-sm text-gray-600">
+                    <a href="privacy.html" class="hover:text-indigo-600">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-indigo-600">Terms of Service</a>
+                    <a href="about.html" class="hover:text-indigo-600">About</a>
                 </div>
-                <nav class="flex gap-6 text-sm text-gray-600" aria-label="Footer navigation">
-                    <a href="privacy.html" class="hover:text-indigo-600 transition" data-i18n="footer_privacy">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-indigo-600 transition" data-i18n="footer_terms">Terms of Service</a>
-                    <a href="about.html" class="hover:text-indigo-600 transition" data-i18n="footer_about">About</a>
-                </nav>
             </div>
-            <p class="text-center text-gray-400 text-sm mt-6" data-i18n="footer_copyright">
-                © 2026 DayCounter.pro. All rights reserved.
-            </p>
+            <p class="text-center text-gray-400 text-sm mt-6">© 2026 DayCounter.pro. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 hidden" role="dialog" aria-label="Cookie consent">
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 hidden">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm">
-                <span data-i18n="cookie_text">🍪 We use cookies to enhance your experience. By continuing, you agree to our </span>
-                <a href="privacy.html" class="underline hover:text-indigo-300" data-i18n="cookie_link">Privacy Policy</a>.
-            </p>
+            <p class="text-sm">🍪 We use cookies to enhance your experience. <a href="privacy.html" class="underline hover:text-indigo-300">Privacy Policy</a>.</p>
             <div class="flex gap-3">
-                <button onclick="acceptCookies()" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-lg text-sm font-medium transition" data-i18n="cookie_accept">
-                    Accept
-                </button>
-                <button onclick="declineCookies()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg text-sm font-medium transition" data-i18n="cookie_decline">
-                    Decline
-                </button>
+                <button onclick="acceptCookies()" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-lg text-sm font-medium">Accept</button>
+                <button onclick="declineCookies()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg text-sm font-medium">Decline</button>
             </div>
         </div>
     </div>
 
-    <!-- i18n Script -->
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg z-50 hidden">
+        <span id="toastMessage"></span>
+    </div>
+
     <script src="js/i18n.js"></script>
-    
+    <script src="js/functions.js"></script>
     <script>
-        // Global translation function
-        function t(key) {
-            return translations[currentLang]?.[key] || translations['en'][key] || key;
+        // ============ Global State ============
+        let selectedEventType = 'birthday';
+        let savedEvents = JSON.parse(localStorage.getItem('daycounter_events') || '[]');
+        let currentCountdown = null;
+        let currentDaysSince = null;
+
+        // ============ Onboarding ============
+        function showOnboarding() {
+            document.getElementById('onboardingModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
-        
-        // Change Language
-        function changeLanguage(lang) {
-            currentLang = lang;
-            applyTranslations(lang);
-            localStorage.setItem('preferredLanguage', lang);
+        function closeOnboarding() {
+            document.getElementById('onboardingModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            localStorage.setItem('onboarding_completed', 'true');
         }
-        
-        // Cookie Consent
+        function nextSlide(num) {
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById('slide' + i).classList.add('hidden');
+                document.getElementById('dot' + i).classList.remove('bg-indigo-600');
+                document.getElementById('dot' + i).classList.add('bg-gray-300');
+            }
+            document.getElementById('slide' + num).classList.remove('hidden');
+            document.getElementById('dot' + num).classList.remove('bg-gray-300');
+            document.getElementById('dot' + num).classList.add('bg-indigo-600');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('onboarding_completed')) setTimeout(showOnboarding, 1000);
+            loadSavedEvents();
+            setDefaultDates();
+            showCookieBanner();
+        });
+
+        // ============ Event Type Selection ============
+        function selectEventType(type) {
+            selectedEventType = type;
+            document.querySelectorAll('.event-type-btn').forEach(btn => {
+                btn.classList.remove('selected');
+                if (btn.dataset.type === type) btn.classList.add('selected');
+            });
+            document.getElementById('customTypeInput').classList.toggle('hidden', type !== 'custom');
+            if (type === 'custom') document.getElementById('customTypeName').focus();
+        }
+
+        // ============ Default Dates ============
+        function setDefaultDates() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('targetDate').value = today;
+            document.getElementById('daysSinceDate').value = today;
+            document.getElementById('date1').value = today;
+            document.getElementById('date2').value = today;
+            document.getElementById('addStartDate').value = today;
+        }
+
+        // ============ Toast ============
+        function showToast(message) {
+            document.getElementById('toastMessage').textContent = message;
+            document.getElementById('toast').classList.remove('hidden');
+            setTimeout(() => document.getElementById('toast').classList.add('hidden'), 3000);
+        }
+
+        // ============ Cookie ============
         function showCookieBanner() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieBanner').classList.remove('hidden');
-            }
+            if (!localStorage.getItem('cookieConsent')) document.getElementById('cookieBanner').classList.remove('hidden');
+        }
+        function acceptCookies() { localStorage.setItem('cookieConsent', 'accepted'); document.getElementById('cookieBanner').classList.add('hidden'); }
+        function declineCookies() { localStorage.setItem('cookieConsent', 'declined'); document.getElementById('cookieBanner').classList.add('hidden'); }
+
+        // ============ Countdown ============
+        function getEventTypeEmoji(type) {
+            const emojis = { birthday: '🎂', anniversary: '💍', wedding: '👰', vacation: '✈️', holiday: '🎄', exam: '📚', custom: '⭐' };
+            return emojis[type] || '📅';
         }
         
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookieBanner').classList.add('hidden');
-        }
-        
-        function declineCookies() {
-            localStorage.setItem('cookieConsent', 'declined');
-            document.getElementById('cookieBanner').classList.add('hidden');
-        }
-        
-        // Countdown
-        function startCountdown() {
-            const name = document.getElementById('countdownName').value || t('countdown_result_label');
-            const date = document.getElementById('countdownDate').value;
-            
-            if (!date) {
-                alert(t('error_select_date'));
-                return;
-            }
+        function calculateCountdown() {
+            const name = document.getElementById('eventName').value || 'Your Event';
+            const date = document.getElementById('targetDate').value;
+            if (!date) { alert('Please select a date'); return; }
             
             const target = new Date(date);
             const now = new Date();
             const diff = target - now;
             const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
             
+            currentCountdown = { type: selectedEventType, name, date, days, direction: 'until' };
+            
             document.getElementById('countdownResult').classList.remove('hidden');
-            document.getElementById('countdownLabel').textContent = `${t('countdown_result_label')} ${name}`;
+            document.getElementById('countdownLabel').textContent = 'Days until ' + name;
             document.getElementById('countdownDays').textContent = days > 0 ? days : 0;
-            document.getElementById('countdownDateDisplay').textContent = target.toLocaleDateString(currentLang === 'zh' ? 'zh-CN' : currentLang === 'ja' ? 'ja-JP' : currentLang === 'es' ? 'es-ES' : 'en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
+            document.getElementById('countdownDateDisplay').textContent = target.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         }
         
-        // Days Since
+        function calculateOnly() {
+            calculateCountdown();
+            currentCountdown = null;
+        }
+
+        // ============ Days Since ============
         function calculateDaysSince() {
-            const name = document.getElementById('daysSinceName').value || t('days_since_result_label');
+            const name = document.getElementById('daysSinceName').value || 'Your Event';
             const date = document.getElementById('daysSinceDate').value;
-            
-            if (!date) {
-                alert(t('error_select_date'));
-                return;
-            }
+            if (!date) { alert('Please select a date'); return; }
             
             const start = new Date(date);
             const now = new Date();
             const diff = now - start;
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             
+            currentDaysSince = { type: 'since', name, date, days, direction: 'since' };
+            
             document.getElementById('daysSinceResult').classList.remove('hidden');
-            document.getElementById('daysSinceLabel').textContent = `${t('days_since_result_label')} ${name}`;
+            document.getElementById('daysSinceLabel').textContent = 'Days since ' + name;
             document.getElementById('daysSinceCount').textContent = days >= 0 ? days : 0;
-            document.getElementById('daysSinceDateDisplay').textContent = start.toLocaleDateString(currentLang === 'zh' ? 'zh-CN' : currentLang === 'ja' ? 'ja-JP' : currentLang === 'es' ? 'es-ES' : 'en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
+            document.getElementById('daysSinceDateDisplay').textContent = start.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         }
-        
-        // Tab Switching
-        function switchTab(tab) {
-            document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
-            document.querySelectorAll('[id^="tab-"]').forEach(t => {
-                t.classList.remove('tab-active');
-                t.classList.add('text-gray-500');
-                t.setAttribute('aria-selected', 'false');
-            });
-            
-            document.getElementById(`panel-${tab}`).classList.remove('hidden');
-            const tabBtn = document.getElementById(`tab-${tab}`);
-            tabBtn.classList.add('tab-active');
-            tabBtn.classList.remove('text-gray-500');
-            tabBtn.setAttribute('aria-selected', 'true');
-        }
-        
-        // Date Difference
-        function calculateDiff() {
-            const date1 = document.getElementById('date1').value;
-            const date2 = document.getElementById('date2').value;
-            
-            if (!date1 || !date2) {
-                alert(t('error_both_dates'));
-                return;
-            }
-            
-            const d1 = new Date(date1);
-            const d2 = new Date(date2);
-            const diff = Math.abs(d2 - d1);
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const weeks = Math.floor(days / 7);
-            const months = Math.floor(days / 30);
-            const years = Math.floor(days / 365);
-            
-            document.getElementById('diffResult').classList.remove('hidden');
-            document.getElementById('diffDays').textContent = `${days.toLocaleString()} ${t('diff_result_prefix')}`;
-            document.getElementById('diffDetails').textContent = 
-                `${t('diff_details_prefix')} ${weeks.toLocaleString()} weeks • ${months.toLocaleString()} months • ${years.toLocaleString()} years`;
-        }
-        
-        // Age Calculator
-        function calculateAge() {
-            const birthDate = document.getElementById('birthDate').value;
-            
-            if (!birthDate) {
-                alert(t('error_birth_date'));
-                return;
-            }
-            
-            const birth = new Date(birthDate);
-            const now = new Date();
-            
-            let years = now.getFullYear() - birth.getFullYear();
-            let months = now.getMonth() - birth.getMonth();
-            let days = now.getDate() - birth.getDate();
-            
-            if (days < 0) {
+    </script>
