@@ -1,0 +1,69 @@
+<!-- Google Analytics - 在 <head> 标签内添加 -->
+<!-- 替换 G-XXXXXXXXXX 为你的实际跟踪 ID -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-XXXXXXXXXX', {
+        // 多语言跟踪
+        'custom_map': {
+            'dimension1': 'language',
+            'dimension2': 'page_type'
+        }
+    });
+    
+    // 记录用户语言偏好
+    gtag('event', 'language_selection', {
+        'language': localStorage.getItem('preferredLanguage') || 'en',
+        'event_category': 'User Preferences',
+        'event_label': 'Language'
+    });
+</script>
+
+<!--
+使用方法：
+1. 访问 https://analytics.google.com
+2. 创建账号和媒体资源
+3. 获取跟踪 ID（格式：G-XXXXXXXXXX）
+4. 替换上面的 G-XXXXXXXXXX
+5. 将这段代码复制到每个 HTML 文件的 <head> 标签内
+-->
+
+<!-- 事件跟踪示例 -->
+<script>
+// 跟踪倒计时计算
+function trackCountdown() {
+    gtag('event', 'countdown_calculation', {
+        'event_category': 'Calculator',
+        'event_label': 'Countdown'
+    });
+}
+
+// 跟踪正数日计算
+function trackDaysSince() {
+    gtag('event', 'days_since_calculation', {
+        'event_category': 'Calculator',
+        'event_label': 'Days Since'
+    });
+}
+
+// 跟踪日期差计算
+function trackDateDiff() {
+    gtag('event', 'date_diff_calculation', {
+        'event_category': 'Calculator',
+        'event_label': 'Date Difference'
+    });
+}
+
+// 跟踪语言切换
+function trackLanguageChange(lang) {
+    gtag('event', 'language_change', {
+        'event_category': 'User Preferences',
+        'event_label': lang
+    });
+}
+</script>

@@ -1,0 +1,11 @@
+# robots.txt for DayCounter.pro
+# https://your-domain.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
