@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayCounter.pro - Free Anniversary & Countdown Tracker</title>
     <meta name="description" content="Track anniversaries, count down to birthdays, calculate days since events. Free with ICS calendar export. Multi-language.">
-    <meta name="keywords" content="day counter, anniversary tracker, countdown, days since, birthday">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +13,20 @@
         body { font-family: 'DM Sans', sans-serif; background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 50%, #e0e7ff 100%); min-height: 100vh; }
         h1, h2, h3, .font-display { font-family: 'Space Grotesk', sans-serif; }
         .gradient-text { background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-primary { background: linear-gradient(135deg, #6366f1, #818cf8); }
+        .btn-primary { background: linear-gradient(135deg, #6366f1, #818cf8); transition: all 0.3s ease; }
         .btn-primary:hover { transform: scale(1.02); box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.5); }
-        .card { background: white; border-radius: 1.5rem; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); }
+        .card { background: white; border-radius: 1.5rem; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); transition: all 0.3s ease; }
         .card:hover { transform: translateY(-4px); }
         .countdown-number { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 4rem; background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         @media (min-width: 768px) { .countdown-number { font-size: 6rem; } }
+        .ad-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px dashed #f59e0b; position: relative; overflow: hidden; }
+        .ad-box::before { content: '📢 AD'; position: absolute; top: 8px; left: 12px; background: #f59e0b; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; }
         .ad-placeholder { background: repeating-linear-gradient(45deg, #f3f4f6, #f3f4f6 10px, #e5e7eb 10px, #e5e7eb 20px); }
         .mood-btn:hover { transform: scale(1.1); }
-        .mood-btn.selected { transform: scale(1.15); box-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
+        .mood-btn.selected { transform: scale(1.15); box-shadow: 0 0 20px rgba(99, 102, 241, 0.5); ring: 2px solid #6366f1; }
+        .modal { display: none; }
+        .modal.active { display: flex; }
+        .tree-hole-card { background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05)); }
     </style>
 </head>
 <body>
@@ -34,6 +38,12 @@
                 <span class="font-display font-bold text-xl gradient-text">DayCounter.pro</span>
             </a>
             <div class="flex items-center gap-4">
+                <nav class="flex items-center gap-4 text-sm font-medium">
+                    <a href="#countdown" class="text-gray-600 hover:text-indigo-600 transition" data-i18n="nav_countdown">Countdown</a>
+                    <a href="#days-since" class="text-gray-600 hover:text-indigo-600 transition" data-i18n="nav_days_since">Days Since</a>
+                    <a href="#calculator" class="text-gray-600 hover:text-indigo-600 transition" data-i18n="nav_calculator">Calculator</a>
+                    <a href="#treehole" class="text-pink-600 hover:text-pink-700 transition font-medium" data-i18n="nav_treehole">🌳 Tree Hole</a>
+                </nav>
                 <select id="langSelector" class="px-3 py-2 border border-gray-300 rounded-lg text-sm cursor-pointer" onchange="changeLanguage(this.value)">
                     <option value="en">🇺🇸 EN</option>
                     <option value="zh">🇨🇳 中文</option>
@@ -44,24 +54,50 @@
         </div>
     </header>
 
+    <!-- Ad Banner 1 -->
+    <div class="ad-box w-full h-20 md:h-24 flex items-center justify-center text-amber-700 text-sm mx-4 mt-4 rounded-xl" style="max-width: calc(100% - 2rem);">
+        <span class="pl-12">Advertisement Space - 728x90</span>
+    </div>
+
     <!-- Hero -->
-    <section class="max-w-6xl mx-auto px-4 py-12 md:py-20 text-center">
+    <section class="max-w-6xl mx-auto px-4 py-12 md:py-16 text-center">
         <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">
             <span data-i18n="hero_title_1">Track Your </span><span class="gradient-text" data-i18n="hero_title_2">Special Days</span>
         </h1>
         <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-8" data-i18n="hero_desc">Count down to birthdays, anniversaries, and special moments. Simple, beautiful, free.</p>
-        <a href="#countdown" class="btn-primary inline-block text-white px-8 py-3 rounded-full font-medium" data-i18n="hero_btn_countdown">Start Countdown</a>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="#countdown" class="btn-primary text-white px-8 py-3 rounded-full font-medium" data-i18n="hero_btn_countdown">Start Countdown</a>
+            <a href="#days-since" class="bg-white text-indigo-600 border-2 border-indigo-200 px-8 py-3 rounded-full font-medium hover:border-indigo-400 transition" data-i18n="hero_btn_days_since">Days Since</a>
+        </div>
     </section>
 
-    <!-- Countdown -->
-    <section id="countdown" class="max-w-4xl mx-auto px-4 py-12">
+    <!-- Countdown Section -->
+    <section id="countdown" class="max-w-4xl mx-auto px-4 py-8">
         <div class="card p-6 md:p-10">
             <h2 class="font-display text-2xl md:text-3xl font-bold mb-8" data-i18n="countdown_title">⏰ Countdown To Special Day</h2>
             
+            <!-- Event Type -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3" data-i18n="event_type_label">Event Type</label>
+                <div class="flex flex-wrap gap-2" id="eventTypeGrid">
+                    <button onclick="selectEventType('birthday')" class="px-4 py-2 rounded-full text-sm bg-indigo-100 text-indigo-600 font-medium selected" data-type="birthday">🎂 Birthday</button>
+                    <button onclick="selectEventType('anniversary')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="anniversary">💍 Anniversary</button>
+                    <button onclick="selectEventType('wedding')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="wedding">👰 Wedding</button>
+                    <button onclick="selectEventType('vacation')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="vacation">✈️ Vacation</button>
+                    <button onclick="selectEventType('holiday')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="holiday">🎄 Holiday</button>
+                    <button onclick="selectEventType('custom')" class="px-4 py-2 rounded-full text-sm bg-pink-100 text-pink-600" data-type="custom">⭐ Custom</button>
+                </div>
+                <!-- Custom Event Name Input -->
+                <div id="customEventInput" class="mt-3 hidden">
+                    <input type="text" id="customEventName" placeholder="Enter custom event name..." class="w-full md:w-1/2 px-4 py-2 border-2 border-pink-200 rounded-xl focus:border-pink-500 outline-none">
+                </div>
+            </div>
+            
+            <!-- Input Fields -->
             <div class="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_event_label">Event Name</label>
-                    <input type="text" id="eventName" data-i18n-placeholder="countdown_event_placeholder" placeholder="e.g. My Birthday..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 outline-none">
+                    <input type="text" id="eventName" placeholder="e.g. My Birthday..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 outline-none">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="countdown_date_label">Target Date</label>
@@ -69,27 +105,196 @@
                 </div>
             </div>
             
+            <!-- Mood Selection -->
             <div class="mb-6">
-                <label class="block text-sm font-medium text-gray-700 mb-3" data-i18n="mood_label">How are you feeling?</label>
-                <div class="flex flex-wrap gap-3">
-                    <button onclick="selectMood('happy')" class="mood-btn text-3xl p-3 rounded-xl bg-white hover:bg-gray-50" data-mood="happy">😊</button>
-                    <button onclick="selectMood('sad')" class="mood-btn text-3xl p-3 rounded-xl bg-white hover:bg-gray-50" data-mood="sad">😢</button>
-                    <button onclick="selectMood('anxious')" class="mood-btn text-3xl p-3 rounded-xl bg-white hover:bg-gray-50" data-mood="anxious">😰</button>
-                    <button onclick="selectMood('excited')" class="mood-btn text-3xl p-3 rounded-xl bg-white hover:bg-gray-50" data-mood="excited">🤩</button>
-                    <button onclick="selectMood('peaceful')" class="mood-btn text-3xl p-3 rounded-xl bg-white hover:bg-gray-50" data-mood="peaceful">😌</button>
-                    <button onclick="selectMood('love')" class="mood-btn text-3xl p-3 rounded-xl bg-white hover:bg-gray-50" data-mood="love">🥰</button>
+                <label class="block text-sm font-medium text-gray-700 mb-3" data-i18n="mood_label">How are you feeling? (Optional)</label>
+                <div class="flex flex-wrap gap-2" id="moodGrid">
+                    <button onclick="selectMood('happy')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="happy">😊</button>
+                    <button onclick="selectMood('sad')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="sad">😢</button>
+                    <button onclick="selectMood('anxious')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="anxious">😰</button>
+                    <button onclick="selectMood('excited')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="excited">🤩</button>
+                    <button onclick="selectMood('peaceful')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="peaceful">😌</button>
+                    <button onclick="selectMood('love')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="love">🥰</button>
                 </div>
             </div>
             
             <button onclick="calculateCountdown()" class="btn-primary text-white px-8 py-3 rounded-full font-medium" data-i18n="countdown_btn">Calculate</button>
             
-            <div id="result" class="hidden mt-8 bg-gradient-to-r from-indigo-50 to-pink-50 rounded-2xl p-8 text-center">
+            <!-- Result -->
+            <div id="countdownResult" class="hidden mt-8 bg-gradient-to-r from-indigo-50 to-pink-50 rounded-2xl p-8 text-center">
                 <p class="text-gray-600 mb-2" data-i18n="countdown_result_label">Days until</p>
-                <div class="countdown-number" id="days">0</div>
-                <p class="text-gray-500 text-sm mt-2" id="dateDisplay"></p>
+                <div class="countdown-number" id="countdownDays">0</div>
+                <p class="text-gray-500 text-sm mt-2" id="countdownDateDisplay"></p>
             </div>
         </div>
     </section>
+
+    <!-- Ad Banner 2 -->
+    <div class="ad-box w-full h-20 md:h-24 flex items-center justify-center text-amber-700 text-sm mx-4 rounded-xl">
+        <span class="pl-12">Advertisement Space - 728x90</span>
+    </div>
+
+    <!-- Days Since Section -->
+    <section id="days-since" class="max-w-4xl mx-auto px-4 py-8">
+        <div class="card p-6 md:p-10">
+            <h2 class="font-display text-2xl md:text-3xl font-bold mb-8" data-i18n="days_since_title">📅 How Long Since...?</h2>
+            
+            <!-- Event Type -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3" data-i18n="event_type_label">Event Type</label>
+                <div class="flex flex-wrap gap-2" id="daysSinceEventTypeGrid">
+                    <button onclick="selectDaysSinceEventType('relationship')" class="px-4 py-2 rounded-full text-sm bg-indigo-100 text-indigo-600 font-medium selected" data-type="relationship">💕 Relationship</button>
+                    <button onclick="selectDaysSinceEventType('milestone')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="milestone">🎯 Milestone</button>
+                    <button onclick="selectDaysSinceEventType('achievement')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="achievement">🏆 Achievement</button>
+                    <button onclick="selectDaysSinceEventType('quit')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="quit">🚭 Quit</button>
+                    <button onclick="selectDaysSinceEventType('start')" class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-600" data-type="start">🚀 Started</button>
+                    <button onclick="selectDaysSinceEventType('custom')" class="px-4 py-2 rounded-full text-sm bg-pink-100 text-pink-600" data-type="custom">⭐ Custom</button>
+                </div>
+                <div id="daysSinceCustomInput" class="mt-3 hidden">
+                    <input type="text" id="daysSinceCustomName" placeholder="Enter custom event name..." class="w-full md:w-1/2 px-4 py-2 border-2 border-pink-200 rounded-xl focus:border-pink-500 outline-none">
+                </div>
+            </div>
+            
+            <!-- Input Fields -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_event_label">Event Name</label>
+                    <input type="text" id="daysSinceName" placeholder="e.g. Started Dating..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="days_since_date_label">Start Date</label>
+                    <input type="date" id="daysSinceDate" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 outline-none">
+                </div>
+            </div>
+            
+            <!-- Mood Selection -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3" data-i18n="mood_label">How did you feel? (Optional)</label>
+                <div class="flex flex-wrap gap-2" id="daysSinceMoodGrid">
+                    <button onclick="selectDaysSinceMood('happy')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="happy">😊</button>
+                    <button onclick="selectDaysSinceMood('sad')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="sad">😢</button>
+                    <button onclick="selectDaysSinceMood('proud')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="proud">🥹</button>
+                    <button onclick="selectDaysSinceMood('excited')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="excited">🤩</button>
+                    <button onclick="selectDaysSinceMood('relieved')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="relieved">😮‍💨</button>
+                    <button onclick="selectDaysSinceMood('grateful')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="grateful">🙏</button>
+                </div>
+            </div>
+            
+            <button onclick="calculateDaysSince()" class="btn-primary text-white px-8 py-3 rounded-full font-medium" data-i18n="days_since_btn">Calculate</button>
+            
+            <!-- Result -->
+            <div id="daysSinceResult" class="hidden mt-8 bg-gradient-to-r from-indigo-50 to-pink-50 rounded-2xl p-8 text-center">
+                <p class="text-gray-600 mb-2" data-i18n="days_since_result_label">Days since</p>
+                <div class="countdown-number" id="daysSinceDays">0</div>
+                <p class="text-gray-500 text-sm mt-2" id="daysSinceDateDisplay"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saved Events -->
+    <section id="saved" class="max-w-4xl mx-auto px-4 py-8">
+        <div class="card p-6 md:p-10">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="font-display text-2xl font-bold" data-i18n="my_events">💾 My Saved Events</h2>
+                <button onclick="exportAllToCalendar()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition" data-i18n="export_all">📅 Export All</button>
+            </div>
+            <div id="eventsList"></div>
+            <div id="noEvents" class="text-center py-12 text-gray-400">
+                <div class="text-5xl mb-4">📝</div>
+                <p data-i18n="no_events">No saved events yet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Banner 3 -->
+    <div class="ad-box w-full h-20 md:h-24 flex items-center justify-center text-amber-700 text-sm mx-4 rounded-xl">
+        <span class="pl-12">Advertisement Space - 728x90</span>
+    </div>
+
+    <!-- Tree Hole Section -->
+    <section id="treehole" class="max-w-4xl mx-auto px-4 py-8">
+        <div class="card p-6 md:p-10">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="font-display text-2xl font-bold mb-2">🌳 <span data-i18n="tree_hole_title">My Tree Hole</span></h2>
+                    <p class="text-gray-600 text-sm" data-i18n="tree_hole_desc">Write your thoughts, feelings, or secrets. They're stored only on your device.</p>
+                </div>
+                <button onclick="exportTreeHole()" class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg text-sm hover:bg-indigo-200 transition">📤 Export</button>
+            </div>
+            
+            <!-- Add Entry -->
+            <div class="tree-hole-card rounded-xl p-4 mb-6">
+                <div class="flex flex-wrap gap-2 mb-3" id="treeHoleMoodGrid">
+                    <button onclick="selectTreeHoleMood('happy')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="happy">😊</button>
+                    <button onclick="selectTreeHoleMood('sad')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="sad">😢</button>
+                    <button onclick="selectTreeHoleMood('anxious')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="anxious">😰</button>
+                    <button onclick="selectTreeHoleMood('love')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="love">🥰</button>
+                    <button onclick="selectTreeHoleMood('peaceful')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="peaceful">😌</button>
+                    <button onclick="selectTreeHoleMood('confused')" class="mood-btn text-2xl p-2 rounded-lg bg-white hover:bg-gray-50" data-mood="confused">🤔</button>
+                </div>
+                <textarea id="treeHoleEntry" placeholder="Write your thoughts..." rows="3" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 outline-none resize-none mb-3"></textarea>
+                <button onclick="saveTreeHoleEntry()" class="btn-primary text-white px-6 py-2 rounded-full font-medium" data-i18n="tree_hole_save">Save to Tree</button>
+            </div>
+            
+            <!-- Tree Hole List -->
+            <div id="treeHoleList"></div>
+        </div>
+    </section>
+
+    <!-- Action Modal -->
+    <div id="actionModal" class="modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+            <h3 class="font-display text-xl font-bold mb-4 text-center" data-i18n="modal_title">What's Next?</h3>
+            
+            <div id="modalResult" class="text-center mb-6">
+                <p class="text-gray-600 mb-2" id="modalResultLabel">Days until</p>
+                <div class="countdown-number text-4xl" id="modalResultDays">0</div>
+                <p class="text-gray-500 text-sm mt-2" id="modalResultDate"></p>
+            </div>
+            
+            <div class="space-y-3">
+                <button onclick="saveEventFromModal()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-medium transition flex items-center justify-center gap-2">
+                    💾 <span data-i18n="modal_save">Save Event</span>
+                </button>
+                
+                <button onclick="addTreeHoleFromModal()" class="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-xl font-medium transition flex items-center justify-center gap-2">
+                    🌳 <span data-i18n="modal_treehole">Write Tree Hole Note</span>
+                </button>
+                
+                <button onclick="exportFromModal()" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-medium transition flex items-center justify-center gap-2">
+                    📅 <span data-i18n="modal_calendar">Add to Calendar</span>
+                </button>
+                
+                <button onclick="closeModal()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-xl font-medium transition" data-i18n="modal_done">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tree Hole Modal -->
+    <div id="treeHoleModal" class="modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6">
+            <h3 class="font-display text-xl font-bold mb-4 text-center">🌳 <span data-i18n="modal_treehole_title">Write Your Thoughts</span></h3>
+            
+            <div class="flex flex-wrap gap-2 mb-4" id="treeHoleModalMoodGrid">
+                <button onclick="selectTreeHoleModalMood('happy')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="happy">😊</button>
+                <button onclick="selectTreeHoleModalMood('sad')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="sad">😢</button>
+                <button onclick="selectTreeHoleModalMood('anxious')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="anxious">😰</button>
+                <button onclick="selectTreeHoleModalMood('excited')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="excited">🤩</button>
+                <button onclick="selectTreeHoleModalMood('peaceful')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="peaceful">😌</button>
+                <button onclick="selectTreeHoleModalMood('love')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="love">🥰</button>
+                <button onclick="selectTreeHoleModalMood('confused')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="confused">🤔</button>
+                <button onclick="selectTreeHoleModalMood('grateful')" class="mood-btn text-2xl p-2 rounded-lg bg-white border-2 border-gray-200 hover:border-pink-500" data-mood="grateful">🙏</button>
+            </div>
+            
+            <textarea id="treeHoleModalEntry" placeholder="Write your thoughts, feelings, or notes about this day..." rows="5" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 outline-none resize-none mb-4"></textarea>
+            
+            <div class="flex gap-3">
+                <button onclick="saveTreeHoleFromModal()" class="flex-1 btn-primary text-white py-3 rounded-xl font-medium transition" data-i18n="modal_save_both">Save with Event</button>
+                <button onclick="saveTreeHoleOnly()" class="flex-1 bg-pink-100 text-pink-600 py-3 rounded-xl font-medium hover:bg-pink-200 transition" data-i18n="modal_save_treehole">Save Tree Hole Only</button>
+            </div>
+            <button onclick="closeTreeHoleModal()" class="w-full mt-3 text-gray-500 hover:text-gray-700 py-2 transition" data-i18n="modal_cancel">Cancel</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 mt-12">
@@ -99,45 +304,129 @@
     </footer>
 
     <!-- Toast -->
-    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-6 py-3 rounded-xl shadow-lg hidden z-50">
-    </div>
+    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-6 py-3 rounded-xl shadow-lg hidden z-50"></div>
 
+    <!-- Scripts -->
     <script src="js/lang.js"></script>
     <script>
+        // ============ State ============
+        let selectedEventType = 'birthday';
         let selectedMood = null;
+        let daysSinceEventType = 'relationship';
+        let daysSinceMood = null;
+        let treeHoleMood = null;
+        let treeHoleModalMood = null;
+        let events = JSON.parse(localStorage.getItem('daycounter_events_v3') || '[]');
+        let treeHoleEntries = JSON.parse(localStorage.getItem('treehole_entries_v3') || '[]');
         
+        // Current calculation result for modal
+        let currentCalculation = null;
+
+        // ============ Event Type Selection ============
+        function selectEventType(type) {
+            selectedEventType = type;
+            document.querySelectorAll('#eventTypeGrid button').forEach(btn => {
+                btn.classList.remove('bg-indigo-100', 'text-indigo-600', 'font-medium');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+            event.target.classList.remove('bg-gray-100', 'text-gray-600');
+            event.target.classList.add('bg-indigo-100', 'text-indigo-600', 'font-medium');
+            
+            // Show/hide custom input
+            const customInput = document.getElementById('customEventInput');
+            if (type === 'custom') {
+                customInput.classList.remove('hidden');
+            } else {
+                customInput.classList.add('hidden');
+            }
+        }
+
+        function selectDaysSinceEventType(type) {
+            daysSinceEventType = type;
+            document.querySelectorAll('#daysSinceEventTypeGrid button').forEach(btn => {
+                btn.classList.remove('bg-indigo-100', 'text-indigo-600', 'font-medium');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+            event.target.classList.remove('bg-gray-100', 'text-gray-600');
+            event.target.classList.add('bg-indigo-100', 'text-indigo-600', 'font-medium');
+            
+            const customInput = document.getElementById('daysSinceCustomInput');
+            if (type === 'custom') {
+                customInput.classList.remove('hidden');
+            } else {
+                customInput.classList.add('hidden');
+            }
+        }
+
+        // ============ Mood Selection ============
         function selectMood(mood) {
             selectedMood = mood;
-            document.querySelectorAll('.mood-btn').forEach(btn => btn.classList.remove('selected'));
-            event.target.classList.add('selected');
+            document.querySelectorAll('#moodGrid .mood-btn').forEach(btn => {
+                btn.classList.remove('selected', 'ring-2', 'ring-indigo-500');
+            });
+            event.target.classList.add('selected', 'ring-2', 'ring-indigo-500');
         }
-        
+
+        function selectDaysSinceMood(mood) {
+            daysSinceMood = mood;
+            document.querySelectorAll('#daysSinceMoodGrid .mood-btn').forEach(btn => {
+                btn.classList.remove('selected', 'ring-2', 'ring-indigo-500');
+            });
+            event.target.classList.add('selected', 'ring-2', 'ring-indigo-500');
+        }
+
+        function selectTreeHoleMood(mood) {
+            treeHoleMood = mood;
+            document.querySelectorAll('#treeHoleMoodGrid .mood-btn').forEach(btn => {
+                btn.classList.remove('selected', 'ring-2', 'ring-pink-500');
+            });
+            event.target.classList.add('selected', 'ring-2', 'ring-pink-500');
+        }
+
+        function selectTreeHoleModalMood(mood) {
+            treeHoleModalMood = mood;
+            document.querySelectorAll('#treeHoleModalMoodGrid .mood-btn').forEach(btn => {
+                btn.classList.remove('selected', 'ring-2', 'ring-pink-500');
+            });
+            event.target.classList.add('selected', 'ring-2', 'ring-pink-500');
+        }
+
+        function getMoodEmoji(mood) {
+            const map = { happy: '😊', sad: '😢', anxious: '😰', excited: '🤩', peaceful: '😌', love: '🥰', proud: '🥹', relieved: '😮‍💨', grateful: '🙏', confused: '🤔' };
+            return map[mood] || '💭';
+        }
+
+        // ============ Countdown Calculation ============
         function calculateCountdown() {
+            const name = document.getElementById('eventName').value.trim();
             const date = document.getElementById('targetDate').value;
-            if (!date) {
-                showToast(t('error_select_date'));
-                return;
+            
+            if (!name) { showToast(t('error_enter_name')); return; }
+            if (!date) { showToast(t('error_select_date')); return; }
+            
+            // Get custom event name if selected
+            let eventName = name;
+            if (selectedEventType === 'custom') {
+                const customName = document.getElementById('customEventName').value.trim();
+                if (customName) eventName = customName;
             }
             
             const today = new Date().toISOString().split('T')[0];
             const days = Math.floor((new Date(date) - new Date(today)) / (1000 * 60 * 60 * 24));
             
-            document.getElementById('days').textContent = Math.max(0, days);
-            document.getElementById('dateDisplay').textContent = new Date(date).toLocaleDateString();
-            document.getElementById('result').classList.remove('hidden');
-        }
-        
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            toast.textContent = msg;
-            toast.classList.remove('hidden');
-            setTimeout(() => toast.classList.add('hidden'), 3000);
-        }
-        
-        // Initialize language on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            initLanguage();
-        });
-    </script>
-</body>
-</html>
+            // Store for modal
+            currentCalculation = {
+                type: 'countdown',
+                name: eventName,
+                date: date,
+                eventType: selectedEventType,
+                mood: selectedMood,
+                days: Math.max(0, days)
+            };
+            
+            // Show result
+            document.getElementById('countdownDays').textContent = Math.max(0, days);
+            document.getElementById('countdownDateDisplay').textContent = formatDate(date);
+            document.getElementById('countdownResult').classList.remove('hidden');
+            
+            //
