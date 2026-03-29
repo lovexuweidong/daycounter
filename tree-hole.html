@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Tree Hole - DayCounter.pro</title>
+    <meta name="description" content="A private space to write down your thoughts, secrets, and feelings. Only you can see it. Stored locally on your device.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .tree-hole-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mood-btn {
+            transition: all 0.3s ease;
+        }
+        .mood-btn:hover {
+            transform: scale(1.1);
+        }
+        .mood-btn.selected {
+            transform: scale(1.15);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+        .entry-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+        textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle 3s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="text-gray-100">
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-700">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl">D</div>
+                <span class="font-display font-bold text-xl gradient-text bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">DayCounter.pro</span>
+            </a>
+            <nav class="flex items-center gap-4">
+                <a href="index.html" class="text-gray-400 hover:text-white text-sm transition">← Back</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-3xl mx-auto px-4 py-12">
+        <!-- Hero -->
+        <div class="text-center mb-12">
+            <div class="text-6xl mb-4">🌳</div>
+            <h1 class="font-display text-4xl md:text-5xl font-bold mb-4 glow-text">Secret Tree Hole</h1>
+            <p class="text-gray-400 text-lg">A private space for your thoughts. Only you can see. Stored on your device.</p>
+        </div>
+
+        <!-- Write Section -->
+        <div class="tree-hole-card rounded-3xl p-6 md:p-8 mb-8">
+            <!-- Mood Selector -->
+            <div class="mb-6">
+                <label class="block text-sm text-gray-400 mb-3">How are you feeling?</label>
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="selectMood('happy')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="happy">😊</button>
+                    <button onclick="selectMood('sad')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="sad">😢</button>
+                    <button onclick="selectMood('anxious')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="anxious">😰</button>
+                    <button onclick="selectMood('angry')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="angry">😤</button>
+                    <button onclick="selectMood('excited')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="excited">🤩</button>
+                    <button onclick="selectMood('peaceful')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="peaceful">😌</button>
+                    <button onclick="selectMood('confused')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="confused">🤔</button>
+                    <button onclick="selectMood('love')" class="mood-btn text-3xl p-3 rounded-xl bg-white/5 hover:bg-white/10" data-mood="love">🥰</button>
+                </div>
+            </div>
+
+            <!-- Text Area -->
+            <div class="mb-6">
+                <textarea id="entryText" rows="6" placeholder="Write anything here... Your thoughts, secrets, feelings, or just random things. This is your private space. 🌙" 
+                    class="w-full bg-white/5 border border-gray-600 rounded-2xl p-4 text-gray-100 placeholder-gray-500 resize-none focus:border-indigo-500 transition"></textarea>
+                <div class="flex justify-between items-center mt-2 text-sm text-gray-500">
+                    <span id="charCount">0 / 2000</span>
+                    <span>🔒 100% Private</span>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button onclick="saveEntry()" class="w-full bg-gradient-to-r from-indigo-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 text-white font-medium py-3 rounded-xl transition transform hover:scale-[1.02]">
+                🌙 Whisper to the Tree
+            </button>
+        </div>
+
+        <!-- Entries List -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-display text-xl font-semibold text-gray-300">🍃 Your Whispers</h2>
+                <div class="flex gap-2">
+                    <button onclick="exportEntries()" class="text-xs bg-white/5 hover:bg-white/10 text-gray-400 px-3 py-1.5 rounded-lg transition">📤 Export</button>
+                    <button onclick="clearAll()" class="text-xs bg-red-500/20 hover:bg-red-500/30 text-red-400 px-3 py-1.5 rounded-lg transition">🗑️ Clear All</button>
+                </div>
+            </div>
+            <div id="entriesList">
+                <!-- Entries will be loaded here -->
+            </div>
+            <div id="emptyState" class="text-center py-12 text-gray-500 hidden">
+                <div class="text-4xl mb-3">🍃</div>
+                <p>No whispers yet.</p>
+                <p class="text-sm mt-1">Start writing your thoughts above.</p>
+            </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="tree-hole-card rounded-2xl p-6 text-center">
+            <p class="text-gray-400 text-sm">
+                🌙 Your whispers are stored only on this device.<br>
+                No one else can see them. Not even us.
+            </p>
+        </div>
+    </main>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-6 py-3 rounded-xl shadow-lg z-50 hidden">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script>
+        // State
+        let selectedMood = null;
+        let entries = JSON.parse(localStorage.getItem('tree_hole_entries') || '[]');
+
+        // Mood Emoji Map
+        const moodEmoji = {
+            happy: '😊',
+            sad: '😢',
+            anxious: '😰',
+            angry: '😤',
+            excited: '🤩',
+            peaceful: '😌',
+            confused: '🤔',
+            love: '🥰'
+        };
+
+        const moodColors = {
+            happy: 'from-yellow-500/20 to-orange-500/20',
+            sad: 'from-blue-500/20 to-indigo-500/20',
+            anxious: 'from-purple-500/20 to-pink-500/20',
+            angry: 'from-red-500/20 to-orange-500/20',
+            excited: 'from-pink-500/20 to-rose-500/20',
+            peaceful: 'from-green-500/20 to-teal-500/20',
+            confused: 'from-gray-500/20 to-slate-500/20',
+            love: 'from-pink-500/20 to-red-500/20'
+        };
+
+        // Create stars
+        function createStars() {
+            const container = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(star);
+            }
+        }
+
+        // Select mood
+        function selectMood(mood) {
+            selectedMood = mood;
+            document.querySelectorAll('.mood-btn').forEach(btn => {
+                btn.classList.remove('selected');
+                if (btn.dataset.mood === mood) {
+                    btn.classList.add('selected');
+                }
+            });
+        }
+
+        // Character count
+        document.getElementById('entryText').addEventListener('input', function() {
+            const count = this.value.length;
+            document.getElementById('charCount').textContent = `${count} / 2000`;
+            if (count > 2000) {
+                this.value = this.value.substring(0, 2000);
+            }
+        });
+
+        // Save entry
+        function saveEntry() {
+            const text = document.getElementById('entryText').value.trim();
+            if (!text) {
+                showToast('Please write something first 🌙');
+                return;
+            }
+
+            const entry = {
+                id: Date.now(),
+                text: text,
+                mood: selectedMood,
+                date: new Date().toISOString(),
+                dateDisplay: new Date().toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            };
+
+            entries.unshift(entry);
+            localStorage.setItem('tree_hole_entries', JSON.stringify(entries));
+            
+            // Clear form
+            document.getElementById('entryText').value = '';
+            document.getElementById('charCount').textContent = '0 / 2000';
+            selectedMood = null;
+            document.querySelectorAll('.mood-btn').forEach(btn => btn.classList.remove('selected'));
+            
+            loadEntries();
+            showToast('🌙 Whispered to the tree');
+        }
+
+        // Load entries
+        function loadEntries() {
+            const list = document.getElementById('entriesList');
+            const empty = document.getElementById('emptyState');
+
+            if (entries.length === 0) {
+                list.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            empty.classList.add('hidden');
+            list.innerHTML = entries.map((entry, idx) => `
+                <div class="entry-card tree-hole-card rounded-xl p-5 mb-3 bg-gradient-to-r ${moodColors[entry.mood] || 'from-gray-500/20 to-slate-500/20'}">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-2xl">${moodEmoji[entry.mood] || '💭'}</span>
+                                <span class="text-xs text-gray-400">${entry.dateDisplay}</span>
+                            </div>
+                            <p class="text-gray-200 whitespace-pre-wrap">${escapeHtml(entry.text)}</p>
+                        </div>
+                        <button onclick="deleteEntry(${idx})" class="text-gray-500 hover:text-red-400 transition text-sm">🗑️</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Delete entry
+        function deleteEntry(idx) {
+            if (confirm('Delete this whisper?')) {
+                entries.splice(idx, 1);
+                localStorage.setItem('tree_hole_entries', JSON.stringify(entries));
+                loadEntries();
+                showToast('🗑️ Deleted');
+            }
+        }
+
+        // Clear all
+        function clearAll() {
+            if (confirm('Delete all whispers? This cannot be undone.')) {
+                entries = [];
+                localStorage.setItem('tree_hole_entries', JSON.stringify(entries));
+                loadEntries();
+                showToast('🗑️ All cleared');
+            }
+        }
+
+        // Export entries
+        function exportEntries() {
+            if (entries.length === 0) {
+                showToast('No entries to export');
+                return;
+            }
+
+            let content = '# My Tree Hole Whispers\n\n';
+            entries.forEach(entry => {
+                content += `## ${entry.dateDisplay}\n`;
+                content += `Mood: ${moodEmoji[entry.mood] || '💭'} ${entry.mood || 'unknown'}\n\n`;
+                content += `${entry.text}\n\n---\n\n`;
+            });
+
+            const blob = new Blob([content], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `tree-hole-${new Date().toISOString().split('T')[0]}.md`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('📤 Exported');
+        }
+
+        // Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Show toast
+        function showToast(message) {
+            document.getElementById('toastMessage').textContent = message;
+            document.getElementById('toast').classList.remove('hidden');
+            setTimeout(() => document.getElementById('toast').classList.add('hidden'), 3000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            loadEntries();
+        });
+    </script>
+</body>
+</html>
