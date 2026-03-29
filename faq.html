@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DayCounter.pro | Frequently Asked Questions</title>
+    <meta name="description" content="Frequently asked questions about DayCounter.pro. Learn how to count days, export to calendar, and use all features. Free anniversary and countdown tracker.">
+    <meta name="keywords" content="FAQ, frequently asked questions, day counter, anniversary tracker, countdown, how to use, calendar export">
+    <link rel="canonical" href="https://daycounter-pi.vercel.app/faq.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'DM Sans', sans-serif; background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 50%, #e0e7ff 100%); min-height: 100vh; }
+        h1, h2, h3, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .faq-item { transition: all 0.3s ease; }
+        .faq-item:hover { transform: translateX(4px); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 500px; padding-top: 1rem; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I count days until my birthday?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter your birthday date in the Countdown section and click Calculate. The tool will show exactly how many days until your next birthday."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate days since an event?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Go to the 'Days Since' section, enter the event name and start date, then click Calculate. The tool will show how many days have passed since that date."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I export events to my calendar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Click the 'Export to Calendar' button after calculating. This will download an ICS file that you can import into Google Calendar, Apple Calendar, or Outlook."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is DayCounter.pro free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, DayCounter.pro is completely free to use. No registration is required, and your dates are never stored or shared."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my data private?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, your data is 100% private. All calculations happen in your browser - we don't store any of your dates or events on our servers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does DayCounter work on mobile phones?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, DayCounter.pro is fully responsive and works perfectly on all mobile devices, tablets, and desktop computers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I add calendar reminders?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enable the 'Calendar Reminder' option before saving. You can choose when to be reminded - 1 day, 1 week, or 1 month before the event."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save events for later?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Click 'Calculate & Save' to store events in your browser. Your saved events will appear in the 'My Saved Events' section."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-purple-100">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl">D</div>
+                <span class="font-display font-bold text-xl gradient-text">DayCounter.pro</span>
+            </a>
+            <nav class="flex items-center gap-4">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 text-sm">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="font-display text-4xl md:text-5xl font-bold mb-4">
+                Frequently Asked <span class="gradient-text">Questions</span>
+            </h1>
+            <p class="text-gray-600 text-lg">Everything you need to know about DayCounter.pro</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+            <h2 class="font-display text-xl font-semibold mb-4">Quick Links</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <a href="index.html" class="text-indigo-600 hover:text-indigo-800 flex items-center gap-2">
+                    <span>⏰</span> Start Countdown
+                </a>
+                <a href="tree-hole.html" class="text-indigo-600 hover:text-indigo-800 flex items-center gap-2">
+                    <span>🌳</span> Secret Tree Hole
+                </a>
+                <a href="privacy.html" class="text-indigo-600 hover:text-indigo-800 flex items-center gap-2">
+                    <span>🔒</span> Privacy Policy
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Categories -->
+        <div class="space-y-4">
+            <!-- Getting Started -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="font-display text-xl font-semibold text-gray-800 flex items-center gap-2">
+                        🚀 Getting Started
+                    </h2>
+                </div>
+                
+                <div class="divide-y divide-gray-100">
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">How do I count days until my birthday?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>Enter your birthday date in the <strong>Countdown</strong> section and click "Calculate". The tool will show exactly how many days until your next birthday. You can also add a calendar reminder!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">How do I calculate days since an event?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>Go to the <strong>"Days Since"</strong> section, enter the event name (like "Started Dating") and the start date, then click "Calculate". The tool will show how many days have passed since that date.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Can I use different event types?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>Yes! We offer 7 preset event types: Birthday 🎂, Anniversary 💍, Wedding 👰, Vacation ✈️, Holiday 🎄, Exam 📚, and Custom ⭐. You can create unlimited custom event types!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar & Export -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="font-display text-xl font-semibold text-gray-800 flex items-center gap-2">
+                        📅 Calendar & Export
+                    </h2>
+                </div>
+                
+                <div class="divide-y divide-gray-100">
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Can I export events to my calendar?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p><strong>Yes!</strong> Click the "Export to Calendar" button after calculating. This will download an <strong>.ics file</strong> that you can import into:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>Google Calendar</li>
+                                <li>Apple Calendar (iPhone/Mac)</li>
+                                <li>Microsoft Outlook</li>
+                                <li>Any calendar app that supports ICS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">How do I add calendar reminders?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>Enable the <strong>"🔔 Enable Calendar Reminder"</strong> option before saving. You can choose when to be reminded:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>On the day</li>
+                                <li>1 day before</li>
+                                <li>3 days before</li>
+                                <li>1 week before</li>
+                                <li>2 weeks before</li>
+                                <li>1 month before</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">How do I import the ICS file?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p><strong>Google Calendar:</strong> Settings → Import → Select the .ics file → Add</p>
+                            <p class="mt-2"><strong>Apple Calendar:</strong> File → Import → Select the .ics file</p>
+                            <p class="mt-2"><strong>Outlook:</strong> File → Open & Export → Import/Export → Import an iCalendar file</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy & Security -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="font-display text-xl font-semibold text-gray-800 flex items-center gap-2">
+                        🔒 Privacy & Security
+                    </h2>
+                </div>
+                
+                <div class="divide-y divide-gray-100">
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Is DayCounter free to use?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p><strong>Yes!</strong> DayCounter.pro is completely free to use. No registration is required, no hidden fees, no premium version. Just open the website and start using it!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Is my data private?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p><strong>Yes, 100%!</strong> All calculations happen in your browser - we don't store any of your dates or events on our servers. Your events are saved only in your browser's local storage (localStorage), which means only YOU can see them.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Do you use cookies?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>We use only essential cookies to remember your language preference and cookie consent. We don't track your browsing behavior or collect personal information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="font-display text-xl font-semibold text-gray-800 flex items-center gap-2">
+                        ⚙️ Technical
+                    </h2>
+                </div>
+                
+                <div class="divide-y divide-gray-100">
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Does DayCounter work on mobile phones?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p><strong>Yes!</strong> DayCounter.pro is fully responsive and works perfectly on all mobile devices, tablets, and desktop computers. You can also add it to your phone's home screen like an app!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Do I need an internet connection?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>Yes, you need an internet connection to load the website. However, once loaded, your saved events work offline since they're stored in your browser.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Can I save events for later?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p><strong>Yes!</strong> Click "Calculate & Save" to store events in your browser. Your saved events will appear in the <strong>"My Saved Events"</strong> section. You can export them all at once or delete individual events.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">What languages are supported?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>We currently support <strong>4 languages</strong>: English 🇺🇸, Chinese 🇨🇳, Spanish 🇪🇸, and Japanese 🇯🇵. More languages coming soon!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Tree Hole -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="font-display text-xl font-semibold text-gray-800 flex items-center gap-2">
+                        🌳 Secret Tree Hole
+                    </h2>
+                </div>
+                
+                <div class="divide-y divide-gray-100">
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">What is the Secret Tree Hole?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p>The Secret Tree Hole is a private space where you can write down your thoughts, feelings, secrets, or anything you want. Think of it as a digital diary that's completely private and stored only on your device.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">Can anyone else see my Tree Hole entries?</h3>
+                            <span class="faq-icon text-gray-400">▼</span>
+                        </div>
+                        <div class="faq-answer text-gray-600">
+                            <p><strong>No!</strong> Your Tree Hole entries are stored 100% locally on your device using localStorage. No one else can see them - not even us. They're completely private.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="bg-gradient-to-r from-indigo-500 to-pink-500 rounded-2xl p-8 mt-12 text-center text-white">
+            <h2 class="font-display text-2xl font-bold mb-4">Still have questions?</h2>
+            <p class="mb-6 opacity-90">Can't find the answer you're looking for? Reach out to us!</p>
+            <a href="mailto:hello@daycounter.pro" class="inline-block bg-white text-indigo-600 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">
+                📧 Contact Us
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-4xl mx-auto px-4 py-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">D</div>
+                <span class="font-display font-bold text-lg">DayCounter.pro</span>
+            </div>
+            <div class="flex justify-center gap-6 text-sm text-gray-600 mb-4">
+                <a href="privacy.html" class="hover:text-indigo-600">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-indigo-600">Terms of Service</a>
+                <a href="faq.html" class="hover:text-indigo-600">FAQ</a>
+                <a href="about.html" class="hover:text-indigo-600">About</a>
+            </div>
+            <p class="text-gray-400 text-sm">© 2026 DayCounter.pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('open');
+                }
+            });
+            // Toggle current FAQ
+            element.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

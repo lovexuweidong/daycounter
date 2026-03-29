@@ -445,11 +445,12 @@ const translationsUI = {
 let uiLang = localStorage.getItem('preferredLanguage') || 'en';
 
 function changeLanguage(lang) {
-    uiLang = lang;
-    localStorage.setItem('preferredLanguage', lang);
-    applyUILanguage(lang);
-    const selector = document.getElementById('langSelector');
-    if (selector) selector.value = lang;
+    applyTranslations(lang);
+}
+
+// This function is now replaced by applyTranslations in i18n.js
+function applyUILanguage(lang) {
+    applyTranslations(lang);
 }
 
 function applyUILanguage(lang) {
